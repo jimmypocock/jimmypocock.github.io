@@ -5,9 +5,26 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 22 Sep 2014 23:27:25 -0500</pubDate>
-    <lastBuildDate>Mon, 22 Sep 2014 23:27:25 -0500</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Mon, 22 Sep 2014 23:46:04 -0500</pubDate>
+    <lastBuildDate>Mon, 22 Sep 2014 23:46:04 -0500</lastBuildDate>
+    <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>Welcome to My World</title>
+        <description>&lt;p&gt;This is Jimmy Pocock, signing into Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Can anyone hear me?&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Sep 2014 18:44:00 -0500</pubDate>
+        <link>/jimmy's/world/2014/09/22/welcome-to-my-world.html</link>
+        <guid isPermaLink="true">/jimmy's/world/2014/09/22/welcome-to-my-world.html</guid>
+        
+        
+        <category>jimmy&#39;s</category>
+        
+        <category>world</category>
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
