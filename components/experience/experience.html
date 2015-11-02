@@ -1,0 +1,31 @@
+<div class="experience-view subview">
+
+  <div class="home-link-include cf" ng-include="'shared/home-link/home-link.html'"></div>
+
+  <img src="images/circles/circle-computer.png" class="experience-image subview-image">
+
+  <h3 class="experience-title subview-title">Experience</h3>
+
+  <p class="experience-summary subview-summary">I am a web developer in Austin, TX with retail and agency marketing experience. I am proficient in front-end web development and application architectural design. My professional experience includes building targeted digital marketing strategies, business development management, and dynamic product line merchandising designed to enhance the user experience. Please feel free to contact me if you have an opportunity you think I may be a fit for, or if you just feel liking talking code, marketing, music, or anything else fun.</p>
+
+  <div class="subview-content cf">
+    <div class="experience-item" ng-repeat="experience in experiences">
+      <h4 class="experience-item-title">{{experience.title}}</h4>
+      <h5 class="experience-item-company">{{experience.company}}</h5>
+      <p class="experience-item-years">From {{experience.startYear}} to {{experience.endYear}}. <span class="experience-item-reason-for-leaving" ng-show="{{experience.reasonForLeaving.length}}">{{experience.reasonForLeaving}}</span></p>
+      <!-- <h5 class="experience-item-location">{{experience.location}}</h5> -->
+      <p class="experience-item-company-summary">{{experience.companySummary}}</p>
+      <h5 class="experience-item-position-summary-header">Responsibilities</h5>
+      <p class="experience-item-position-summary">{{experience.positionSummary}}</p>
+      <div class="experience-item-achievements" ng-show="{{experience.achievements.length}}">
+        <h5 class="experience-item-achievements-header">Achievements</h5>
+        <ul>
+          <li ng-repeat="achievement in experience.achievements" class="experience-item-achievement">{{achievement}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="resume-download-link-include cf" ng-include="'shared/resume-download-link/resume-download-link.html'"></div>
+
+</div>

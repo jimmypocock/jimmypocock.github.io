@@ -1,0 +1,28 @@
+<div class="view portfolio-view subview">
+
+  <div class="home-link-include cf" ng-include="'shared/home-link/home-link.html'"></div>
+
+  <img src="images/circles/circle-all-nighter.png" class="portfolio-image subview-image">
+
+  <h3 class="portfolio-title subview-title">Portfolio</h3>
+
+  <p class="portfolio-summary subview-summary">I'm the type that creates from the heart. I can't say I've ever coded something and felt like I was working. I try to build something with each new technology I learn, so you'll see projects utilizing Ruby on Rails, Node.js, Express.js, Sinatra, Ruby Gems, such as Roo and Devise, JavaScript libraries and frameworks, such as AngularJS and jQuery, APIs, like PayPal, Web Audio, and FileReader, and style frameworks like Twitter Bootstrap. Check out my GitHub (where all of these projects live) at <a href="http://github.com/jimmypocock">github.com/jimmypocock</a>.</p>
+
+  <div class="portfolio-items">
+    <div class="portfolio-item" ng-repeat="item in portfolio" style="background: linear-gradient(rgba(0, 0, 0, 0.80),rgba(0, 0, 0, 0.55)), url({{item.linkBackground}}) repeat;">
+      <a ng-href="/#/portfolio/{{item.id}}">
+        <div class="cf">
+          <div class="portfolio-item-text">
+            <h4 class="portfolio-item-header">{{item.header}}</h4>
+            <h5 class="portfolio-item-subheader">{{item.subheader}}</h5>
+            <p class="portfolio-item-summary">{{item.shortSummary}}</p>
+          </div>
+          <div class="portfolio-item-arrow">
+            &#59238;
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
