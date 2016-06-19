@@ -12,6 +12,22 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="header">
+      <h1>
+        <span class="letter">j</span>
+        <span class="letter">i</span>
+        <span class="letter">m</span>
+        <span class="letter">m</span>
+        <span class="letter">y</span>
+        <span class="letter space"></span>
+        <span class="letter">p</span>
+        <span class="letter">o</span>
+        <span class="letter">c</span>
+        <span class="letter">o</span>
+        <span class="letter">c</span>
+        <span class="letter">k</span>
+      </h1>
+    </div>
     <div id="yield"></div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
@@ -23,23 +39,33 @@
 
     <script>
 
-      /* jshint strict: false */
-      /* globals $: false */
-      /* globals crossroads: false */
-      /* globals hasher: false */
-      /* globals Mustache: false */
-
-      crossroads.addRoute('/', function() {
-        $.get('templates/home.mst', function(template) {
+      var getTemplate = function(slug) {
+        var fileLocation = 'templates/' + slug + '.mst';
+        $.get(fileLocation, function(template) {
           var rendered = Mustache.render(template);
           $('#yield').html(rendered);
-          window.App.fullscreen();
         });
+      };
+
+      crossroads.addRoute('/', function() {
+        getTemplate('home');
       });
 
-      crossroads.addRoute('/thoughts/{slug}', function(slug) {
-        window.App.populateThought(slug);
+      crossroads.addRoute('/developer', function(slug) {
+        getTemplate('developer');
       });
+
+      crossroads.addRoute('/thinker', function(slug) {
+        getTemplate('thinker');
+      });
+
+      crossroads.addRoute('/conversationalist', function(slug) {
+        getTemplate('conversationalist');
+      });
+
+      // crossroads.addRoute('/thoughts/{slug}', function(slug) {
+      //   window.App.populateThought(slug);
+      // });
 
       // log all routes
       crossroads.routed.add(console.log, console);

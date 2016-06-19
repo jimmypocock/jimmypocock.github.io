@@ -1,24 +1,20 @@
-<div id="home" class="page">
-  <div class="header">
-    <h1>
-      <span class="letter">j</span>
-      <span class="letter">i</span>
-      <span class="letter">m</span>
-      <span class="letter">m</span>
-      <span class="letter">y</span>
-      <span class="letter space"></span>
-      <span class="letter">p</span>
-      <span class="letter">o</span>
-      <span class="letter">c</span>
-      <span class="letter">o</span>
-      <span class="letter">c</span>
-      <span class="letter">k</span>
-    </h1>
-    <div class="social-bar">
-      <div><a href="http://github.com/jimmypocock" target="_blank"><i class="fa fa-github-alt"></i><span class="text">Developer</span></a></div>
-      <!-- <div><a href="http://twitter.com/jimmypocock" target="_blank"><i class="fa fa-lightbulb-o"></i><span class="text">Thinker</span></a></div> -->
-      <div><a href="mailto:jimmy@jimmypocock.com" target="_blank"><i class="fa fa-envelope"></i><span class="text">Conversationalist</span></a></div>
-      <div><a href="http://linkedin.com/in/jimmypocock" target="_blank"><i class="fa fa-linkedin"></i><span class="text">Professional</span></a></div>
-    </div>
+<div class="nav">
+  <div class="link developer">
+    <a href="/#/developer">
+      <i class="fa fa-code"></i>
+      <span class="text">Developer</span>
+    </a>
+  </div>
+  <div class="link thinker">
+    <a href="/#/thinker">
+      <i class="fa fa-lightbulb-o"></i>
+      <span class="text">Thinker</span>
+    </a>
+  </div>
+  <div class="link conversationalist">
+    <a href="/#/conversationalist">
+      <i class="fa fa-coffee"></i>
+      <span class="text">Conversationalist</span>
+    </a>
   </div>
 </div>

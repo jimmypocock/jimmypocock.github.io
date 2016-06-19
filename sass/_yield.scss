@@ -1,0 +1,43 @@
+#yield {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  border: 1px solid $black;
+  border-right: 0;
+  @include rem-fallback(padding, 1.5, 0, 0, 1);
+
+  @include mobile {
+    border: 0;
+    // padding-left: 0;
+  }
+
+  .nav .link {
+    @include rem-fallback(padding-bottom, 1.5);
+  }
+
+  a {
+    font-size: 2.5em;
+    color: $black;
+    text-decoration: none;
+    font-family: $josefin;
+    i {
+      text-align: center;
+      color: $black;
+      width: 45px;
+
+      @include mobile {
+        width: 30px;
+      }
+    }
+    .text {
+      letter-spacing: 4px;
+      @include rem-fallback(padding-left, 0.75);
+    }
+    &:hover {
+      color: $hoverColor;
+      i {
+        color: $hoverColor;
+      }
+    }
+  }
+}

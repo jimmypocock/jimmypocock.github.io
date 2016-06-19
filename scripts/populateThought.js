@@ -1,7 +1,3 @@
-/* jshint strict: false */
-/* globals $: false */
-/* globals Mustache: false */
-
 window.App = window.App || {};
 
 window.App.populateThought = function(slug) {

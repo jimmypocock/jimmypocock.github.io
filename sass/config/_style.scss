@@ -24,6 +24,7 @@ html{
 
   body {
     font-size: 62.5%;
+    background-color: $white;
   }
 }
 
@@ -40,10 +41,17 @@ html{
 //   margin: 0;
 // }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   line-height: 1.4;
+  font-family: $josefin;
+  color: $black;
+}
+
+p {
+  font-family: $lato;
+  color: $black;
 }
 
 a, i {
