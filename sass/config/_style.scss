@@ -1,0 +1,61 @@
+/***************
+ * BASIC STYLE *
+ ***************/
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  height: 100%;
+  font-size: 16px;
+
+  body {
+    font-size: 62.5%;
+  }
+}
+
+// .container, .container-fluid {
+//   padding: 0;
+//   margin: 0 auto;
+//   @include mobile {
+//     @include rem-fallback(padding, 0, 1);
+//   }
+// }
+
+// .row {
+//   padding: 0;
+//   margin: 0;
+// }
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+a, i {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:visited,
+  &:focus,
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+div[class^="col-"], div[class*=" col-"] {
+  padding: 0;
+}

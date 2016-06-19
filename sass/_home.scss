@@ -1,0 +1,98 @@
+$backgroundImage: 'images/waves.jpeg';
+$hoverColor: lighten($skyBlue, 25);
+
+#home.page {
+  @include background;
+  background-image: url($backgroundImage);
+  background-image: linear-gradient(rgba(darken($skyBlue, 45), 0.85) 50%, rgba(darken($skyBlue, 45), 0.5) 100%), url($backgroundImage);
+
+  .header {
+    width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    @include rem-fallback(padding-top, 4);
+
+    @include mobile {
+      width: initial;
+      text-align: left;
+      @include rem-fallback(padding, 0, 1);
+    }
+  }
+
+  h1, h2 {
+    font-family: $josefin;
+    color: $white;
+  }
+
+  h1 {
+    font-size: 6.5em;
+    font-weight: 300;
+    text-transform: lowercase;
+    border-bottom: 1px solid $white;
+    line-height: 1;
+    @include rem-fallback(padding-bottom, 1.5);
+
+    @include mobile {
+      font-size: 3.5em;
+      @include rem-fallback(padding, 1.5, 0);
+    }
+
+    .letter {
+      transition: all 0.6s ease;
+      @include rem-fallback(padding, 0, 0.5);
+
+      @include mobile {
+        padding: 0;
+      }
+
+      &.space {
+        @include rem-fallback(padding, 0, 1);
+
+        @include mobile {
+          @include rem-fallback(padding, 0, 0.5);
+        }
+      }
+    }
+  }
+
+  .social-bar {
+    text-align: left;
+    border-left: 1px solid $white;
+    @include rem-fallback(padding, 1.5, 0, 0, 1);
+
+    @include mobile {
+      border: 0;
+      padding-left: 0;
+    }
+
+    div {
+      @include rem-fallback(padding-bottom, 1.5);
+    }
+
+    a {
+      font-size: 2.5em;
+      color: $white;
+      text-decoration: none;
+      font-family: $josefin;
+      i {
+        text-align: center;
+        color: $white;
+        width: 45px;
+
+        @include mobile {
+          width: 30px;
+        }
+      }
+      .text {
+        letter-spacing: 4px;
+        @include rem-fallback(padding-left, 0.75);
+      }
+      &:hover {
+        color: $hoverColor;
+        i {
+          color: $hoverColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+$(function(){function i(){$(".page").css("height",$(window).height())}i(),$(window).resize(function(){i()})});

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jimmy Pocock</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body>
+    <h1>Hello, World</h1>
+    <p></p>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+    <script>
+      'use strict';
+
+      window.App = window.App || {};
+
+      window.App.readTextFile = function(file) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open('GET', file, false);
+        rawFile.onreadystatechange = function () {
+          if(rawFile.readyState === 4)
+          {
+            if(rawFile.status === 200 || rawFile.status === 0)
+            {
+              var allText = rawFile.responseText;
+              var formattedText = allText.replace(/\n/g, '</br>');
+              $('p').html(formattedText);
+            }
+          }
+        };
+        rawFile.send(null);
+      };
+
+      window.App.readTextFile('on-gun-control.txt');
+    </script>
+  </body>
+</html>
