@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Jimmy Pocock</title>
-    <meta name="description" content="Developer, Musician, Thinker">
+    <meta name="description" content="Developer, Thinker, Conversationalist">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,600' rel='stylesheet' type='text/css'>
@@ -39,12 +39,34 @@
 
     <script>
 
-      var getTemplate = function(slug) {
+
+      var getTemplate = function(slug, data) {
         var fileLocation = 'templates/' + slug + '.mst';
         $.get(fileLocation, function(template) {
-          var rendered = Mustache.render(template);
+          var rendered = Mustache.render(template, data);
           $('#yield').html(rendered);
         });
+      };
+
+      var populateThought = function(slug) {
+        var rawFile = new XMLHttpRequest();
+        var fileLocation = 'thoughts/' + slug + '.txt';
+        rawFile.open('GET', fileLocation, false);
+        rawFile.onreadystatechange = function () {
+          if(rawFile.readyState === 4)
+          {
+            if(rawFile.status === 200 || rawFile.status === 0)
+            {
+              var
+              allText       = rawFile.responseText,
+              textArr       = allText.split(/\n/).filter(function(v){ return v !== ''; }),
+              title         = textArr.shift(),
+              formattedText = textArr.join('</br></br>');
+              getTemplate('thought', { title: title, thought: formattedText });
+            }
+          }
+        };
+        rawFile.send(null);
       };
 
       crossroads.addRoute('/', function() {
@@ -55,17 +77,17 @@
         getTemplate('developer');
       });
 
-      crossroads.addRoute('/thinker', function(slug) {
-        getTemplate('thinker');
+      crossroads.addRoute('/thoughts', function(slug) {
+        getTemplate('thoughts');
       });
 
       crossroads.addRoute('/conversationalist', function(slug) {
         getTemplate('conversationalist');
       });
 
-      // crossroads.addRoute('/thoughts/{slug}', function(slug) {
-      //   window.App.populateThought(slug);
-      // });
+      crossroads.addRoute('/thoughts/{slug}', function(slug) {
+        populateThought(slug);
+      });
 
       // log all routes
       crossroads.routed.add(console.log, console);

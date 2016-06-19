@@ -10,18 +10,8 @@
     @include rem-fallback(padding, 0, 1);
   }
 
-  h1, h2 {
-  }
-
   h1 {
-    font-size: 6.5em;
-    font-weight: 300;
-    text-transform: lowercase;
-    line-height: 1;
-    @include rem-fallback(padding-bottom, 1.5);
-
     @include mobile {
-      font-size: 3.5em;
       border-bottom: 1px solid $black;
       @include rem-fallback(padding, 1.5, 0);
     }

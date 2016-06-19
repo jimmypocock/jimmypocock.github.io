@@ -1,8 +1,8 @@
 <div class="nav">
-  <div class="link back">
+  <div class="link">
     <a href="/#/">
-      <i class="fa fa-angle-double-left"></i>
-      <span class="text">Back</span>
+      <i class="fa fa-home"></i>
+      <span class="text">Home</span>
     </a>
   </div>
   <div class="link">

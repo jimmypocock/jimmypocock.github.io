@@ -1,1 +1,0 @@
-window.App=window.App||{},window.App.populateThought=function(t){var e=new XMLHttpRequest,n="thoughts/"+t+".txt";e.open("GET",n,!1),e.onreadystatechange=function(){if(4===e.readyState&&(200===e.status||0===e.status)){var t=e.responseText,n=t.replace(/\n/g,"</br>");$.get("templates/thought.mst",function(t){var e=Mustache.render(t,{thought:n});$("#yield").html(e)})}},e.send(null)};

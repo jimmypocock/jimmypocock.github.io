@@ -1,0 +1,47 @@
+$linkColor: $black;
+$hoverColor: $blue;
+
+.nav {
+  @include rem-fallback(padding-left, 1);
+  .link {
+    @include rem-fallback(padding-bottom, 1.5);
+    &:last-child {
+      padding-bottom: 0;
+    }
+    a {
+      font-size: 2.5em;
+      color: $linkColor;
+      text-decoration: none;
+      font-family: $josefin;
+      i {
+        text-align: center;
+        color: $linkColor;
+        width: 45px;
+
+        @include mobile {
+          width: 30px;
+        }
+      }
+      .text {
+        letter-spacing: 4px;
+        line-height: 1.4;
+        @include rem-fallback(padding-left, 0.75);
+
+      }
+      &:visited,
+      &:active,
+      &:focus {
+        color: $linkColor;
+        i {
+          color: $linkColor;
+        }
+      }
+      &:hover {
+        color: $hoverColor;
+        i {
+          color: $hoverColor;
+        }
+      }
+    }
+  }
+}

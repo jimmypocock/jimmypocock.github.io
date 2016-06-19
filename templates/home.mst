@@ -1,17 +1,17 @@
 <div class="nav">
-  <div class="link developer">
+  <div class="link">
     <a href="/#/developer">
       <i class="fa fa-code"></i>
       <span class="text">Developer</span>
     </a>
   </div>
-  <div class="link thinker">
-    <a href="/#/thinker">
+  <div class="link">
+    <a href="/#/thoughts">
       <i class="fa fa-lightbulb-o"></i>
       <span class="text">Thinker</span>
     </a>
   </div>
-  <div class="link conversationalist">
+  <div class="link">
     <a href="/#/conversationalist">
       <i class="fa fa-coffee"></i>
       <span class="text">Conversationalist</span>
