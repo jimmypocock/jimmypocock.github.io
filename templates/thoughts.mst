@@ -5,22 +5,22 @@
       <span class="text">Home</span>
     </a>
   </div>
-  <div class="link">
+  <!-- <div class="link">
     <a href="/#/thoughts/on-gun-control">
       <i class="fa fa-lightbulb-o"></i>
       <span class="text">On Gun Control</span>
     </a>
-  </div>
+  </div> -->
   <div class="link">
     <a href="/#/thoughts/on-the-harambe-incident">
       <i class="fa fa-lightbulb-o"></i>
       <span class="text">On the Harambe Incident</span>
     </a>
   </div>
-  <div class="link">
+  <!-- <div class="link">
     <a href="/#/thoughts/interpretations-and-misinterpretations">
       <i class="fa fa-lightbulb-o"></i>
       <span class="text">Interpretations and Misinterpretations</span>
     </a>
-  </div>
+  </div> -->
 </div>
