@@ -12,32 +12,52 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="home" class="page">
-      <div class="header">
-        <h1>
-          <span class="letter">j</span>
-          <span class="letter">i</span>
-          <span class="letter">m</span>
-          <span class="letter">m</span>
-          <span class="letter">y</span>
-          <span class="letter space"></span>
-          <span class="letter">p</span>
-          <span class="letter">o</span>
-          <span class="letter">c</span>
-          <span class="letter">o</span>
-          <span class="letter">c</span>
-          <span class="letter">k</span>
-        </h1>
-        <div class="social-bar">
-          <div><a href="http://github.com/jimmypocock" target="_blank"><i class="fa fa-github-alt"></i><span class="text">Developer</span></a></div>
-          <!-- <div><a href="http://twitter.com/jimmypocock" target="_blank"><i class="fa fa-lightbulb-o"></i><span class="text">Thinker</span></a></div> -->
-          <div><a href="mailto:jimmy@jimmypocock.com" target="_blank"><i class="fa fa-envelope"></i><span class="text">Conversationalist</span></a></div>
-          <div><a href="http://linkedin.com/in/jimmypocock" target="_blank"><i class="fa fa-linkedin"></i><span class="text">Professional</span></a></div>
-        </div>
-      </div>
-    </div>
+    <div id="yield"></div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script type="text/javascript" src="js/bundled.js"></script>
+
+    <script>
+
+      /* jshint strict: false */
+      /* globals $: false */
+      /* globals crossroads: false */
+      /* globals hasher: false */
+      /* globals Mustache: false */
+
+      crossroads.addRoute('/', function() {
+        $.get('templates/home.mst', function(template) {
+          var rendered = Mustache.render(template);
+          $('#yield').html(rendered);
+          window.App.fullscreen();
+        });
+      });
+
+      crossroads.addRoute('/thoughts/{slug}', function(slug) {
+        window.App.populateThought(slug);
+      });
+
+      // log all routes
+      crossroads.routed.add(console.log, console);
+
+      crossroads.bypassed.add(function(request) {
+        console.error(request + ' seems to be a dead end...');
+      });
+
+      function parseHash(newHash, oldHash){
+        // second parameter of crossroads.parse() is the "defaultArguments" and should be an array
+        // so we ignore the "oldHash" argument to avoid issues.
+        crossroads.parse(newHash);
+      }
+      hasher.initialized.add(parseHash); //parse initial hash
+      hasher.changed.add(parseHash); //parse hash changes
+
+      hasher.init(); //start listening for hash changes
+
+    </script>
   </body>
 </html>
