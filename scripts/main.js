@@ -1,53 +1,11 @@
 $(function() {
 
-  var getTemplate = function(slug, data) {
-    var fileLocation = 'templates/' + slug + '.mst';
-    $.get(fileLocation, function(template) {
-      var rendered = Mustache.render(template, data);
-      $('#yield').html(rendered);
-    });
-  };
 
-  var populateNavLinks = function(links) {
-    $('#nav .link').hide(150);
-    $.get('templates/navLink.mst', function(template) {
-      for (var i = 0; i < links.length; i++) {
-        var rendered = Mustache.render(template, links[i]);
-        $(rendered).appendTo('#nav');
-      }
-    });
-  };
 
-  var populateThought = function(slug) {
-    var rawFile = new XMLHttpRequest();
-    var fileLocation = 'thoughts/' + slug + '.txt';
-    rawFile.open('GET', fileLocation, false);
-    rawFile.onreadystatechange = function () {
-      if(rawFile.readyState === 4)
-      {
-        if(rawFile.status === 200 || rawFile.status === 0)
-        {
-          var
-          allText       = rawFile.responseText,
-          textArr       = allText.split(/\n/).filter(function(v){ return v !== ''; }),
-          title         = textArr.shift(),
-          formattedText = textArr.join('</br></br>');
-          getTemplate('thought',
-            {
-              title: title,
-              thought: formattedText,
-              url: window.location.href + '/#/thoughts/' + slug
-            }
-          );
-        }
-      }
-    };
-    rawFile.send(null);
-  };
 
-  var resetYield = function() {
-    $('#yield').empty();
-  };
+/*************
+ * Nav Links *
+ *************/
 
   var
   homeNavLinks = [
@@ -135,6 +93,74 @@ $(function() {
       text:   'Thoughts'
     }
   ];
+
+
+
+
+
+
+/**********************
+ * Template Functions *
+ **********************/
+
+  var getTemplate = function(slug, data) {
+    var fileLocation = 'templates/' + slug + '.mst';
+    $.get(fileLocation, function(template) {
+      var rendered = Mustache.render(template, data);
+      $('#yield').html(rendered);
+    });
+  };
+
+  var populateNavLinks = function(links) {
+    $('#nav .link').hide(150);
+    $.get('templates/navLink.mst', function(template) {
+      for (var i = 0; i < links.length; i++) {
+        var rendered = Mustache.render(template, links[i]);
+        $(rendered).appendTo('#nav');
+      }
+    });
+  };
+
+  var populateThought = function(slug) {
+    var rawFile = new XMLHttpRequest();
+    var fileLocation = 'thoughts/' + slug + '.txt';
+    rawFile.open('GET', fileLocation, false);
+    rawFile.onreadystatechange = function () {
+      if(rawFile.readyState === 4)
+      {
+        if(rawFile.status === 200 || rawFile.status === 0)
+        {
+          var
+          allText       = rawFile.responseText,
+          textArr       = allText.split(/\n/).filter(function(v){ return v !== ''; }),
+          title         = textArr.shift(),
+          formattedText = textArr.join('</br></br>');
+          getTemplate('thought',
+            {
+              title: title,
+              thought: formattedText,
+              url: window.location.href + '/#/thoughts/' + slug
+            }
+          );
+        }
+      }
+    };
+    rawFile.send(null);
+  };
+
+  var resetYield = function() {
+    $('#yield').empty();
+  };
+
+
+
+
+
+
+
+/**********
+ * Router *
+ **********/
 
   crossroads.addRoute('/', function() {
     populateNavLinks(homeNavLinks);
