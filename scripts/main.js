@@ -123,16 +123,19 @@ $(function() {
   },
 
   populateNavLinks = function(links) {
-    var div = $('<div class="nav-links">');
+    // var div = $('<div class="nav-links">');
+
+    $('#nav .link').hide(150);
 
     $.get('templates/navLink.mst', function(template) {
       for (var i = 0; i < links.length; i++) {
         var rendered = Mustache.render(template, links[i]);
-        div.append(rendered);
+        // div.append(rendered);
+        $(rendered).hide().appendTo('#nav').show(700);
       }
 
-      $('.nav-links').hide(150);
-      div.hide().appendTo('#nav').show('slow');
+
+      // div.hide().appendTo('#nav').show(750);
     });
   },
 
@@ -146,8 +149,7 @@ $(function() {
       getTemplate('thought',
         {
           title: title,
-          thought: formattedText,
-          url: window.location.href + '/#/thoughts/' + slug
+          thought: formattedText
         }
       );
     });

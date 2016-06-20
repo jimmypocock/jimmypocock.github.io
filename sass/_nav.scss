@@ -8,14 +8,16 @@ $hoverColor: $blue;
   text-align: left;
   border: 1px solid $black;
   border-right: 0;
-  @include rem-fallback(padding, 1.5, 0);
+  @include rem-fallback(padding, 0.75, 0);
+  // @include rem-fallback(padding, 1.5, 0);
   @include rem-fallback(padding-left, 1);
 
   @include mobile {
     border-left: 0;
   }
   .link {
-    @include rem-fallback(padding-bottom, 1.5);
+    line-height: 2;
+    // @include rem-fallback(padding-bottom, 1.5);
     &:last-child {
       padding-bottom: 0;
     }
