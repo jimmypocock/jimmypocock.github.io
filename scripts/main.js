@@ -84,6 +84,16 @@ $(function() {
       route:  '/#/thoughts/on-the-harambe-incident',
       icon:   'fa-lightbulb-o',
       text:   'On the Harambe Incident'
+    },
+    {
+      route:  '/#/thoughts/the-causes-and-effects-of-the-paris-attack',
+      icon:   'fa-lightbulb-o',
+      text:   'The Causes and Effects of the Paris Attack'
+    },
+    {
+      route:  '/#/thoughts/the-empiricist',
+      icon:   'fa-lightbulb-o',
+      text:   'The Empiricist'
     }
   ],
   thoughtNavLinks = [
