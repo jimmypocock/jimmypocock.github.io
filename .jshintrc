@@ -16,6 +16,7 @@
         "google"                    : false,
         "mixpanel"                  : false,
         "Mustache"                  : false,
+        "require"                   : false,
         "transformMixpanelData"     : false,
         "triggerMixPanel"           : false,
         "window"                    : false
