@@ -113,52 +113,47 @@ $(function() {
  * Template Functions *
  **********************/
 
-  var getTemplate = function(slug, data) {
+  var
+  getTemplate = function(slug, data) {
     var fileLocation = 'templates/' + slug + '.mst';
     $.get(fileLocation, function(template) {
       var rendered = Mustache.render(template, data);
       $('#yield').html(rendered);
     });
-  };
+  },
 
-  var populateNavLinks = function(links) {
-    $('#nav .link').hide(150);
+  populateNavLinks = function(links) {
+    var div = $('<div class="nav-links">');
+
     $.get('templates/navLink.mst', function(template) {
       for (var i = 0; i < links.length; i++) {
         var rendered = Mustache.render(template, links[i]);
-        $(rendered).appendTo('#nav');
+        div.append(rendered);
       }
+
+      $('.nav-links').hide(150);
+      div.hide().appendTo('#nav').show('slow');
     });
-  };
+  },
 
-  var populateThought = function(slug) {
-    var rawFile = new XMLHttpRequest();
+  populateThought = function(slug) {
     var fileLocation = 'thoughts/' + slug + '.txt';
-    rawFile.open('GET', fileLocation, false);
-    rawFile.onreadystatechange = function () {
-      if(rawFile.readyState === 4)
-      {
-        if(rawFile.status === 200 || rawFile.status === 0)
+    $.get(fileLocation, function(allText) {
+      var
+      textArr       = allText.split(/\n/).filter(function(v){ return v !== ''; }),
+      title         = textArr.shift(),
+      formattedText = textArr.join('</br></br>');
+      getTemplate('thought',
         {
-          var
-          allText       = rawFile.responseText,
-          textArr       = allText.split(/\n/).filter(function(v){ return v !== ''; }),
-          title         = textArr.shift(),
-          formattedText = textArr.join('</br></br>');
-          getTemplate('thought',
-            {
-              title: title,
-              thought: formattedText,
-              url: window.location.href + '/#/thoughts/' + slug
-            }
-          );
+          title: title,
+          thought: formattedText,
+          url: window.location.href + '/#/thoughts/' + slug
         }
-      }
-    };
-    rawFile.send(null);
-  };
+      );
+    });
+  },
 
-  var resetYield = function() {
+  resetYield = function() {
     $('#yield').empty();
   };
 
