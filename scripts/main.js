@@ -118,7 +118,10 @@ $(function() {
     var fileLocation = 'templates/' + slug + '.mst';
     $.get(fileLocation, function(template) {
       var rendered = Mustache.render(template, data);
-      $('#yield').html(rendered);
+      resetYield();
+      setTimeout(function() {
+        $(rendered).hide().appendTo('#yield').fadeIn('slow');
+      }, 500);
     });
   },
 
