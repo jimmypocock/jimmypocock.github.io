@@ -81,6 +81,11 @@ $(function() {
       text:   'Home'
     },
     {
+      route:  '/#/thoughts/an-almanac',
+      icon:   'fa-lightbulb-o',
+      text:   'An Almanac, My Almanac'
+    },
+    {
       route:  '/#/thoughts/on-the-harambe-incident',
       icon:   'fa-lightbulb-o',
       text:   'On the Harambe Incident'
