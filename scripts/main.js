@@ -126,7 +126,7 @@ $(function() {
   },
 
   populateNavLinks = function(links) {
-    $('#nav .link').hide(150);
+    $('#nav .link').hide(350);
 
     $.get('templates/navLink.mst', function(template) {
       for (var i = 0; i < links.length; i++) {

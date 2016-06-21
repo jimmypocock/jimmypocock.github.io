@@ -13,6 +13,7 @@ $hoverColor: $blue;
 
   @include mobile {
     border-left: 0;
+    @include rem-fallback(padding-right, 1);
   }
   .link {
     line-height: 2;
