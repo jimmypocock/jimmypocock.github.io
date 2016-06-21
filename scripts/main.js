@@ -123,19 +123,13 @@ $(function() {
   },
 
   populateNavLinks = function(links) {
-    // var div = $('<div class="nav-links">');
-
     $('#nav .link').hide(150);
 
     $.get('templates/navLink.mst', function(template) {
       for (var i = 0; i < links.length; i++) {
         var rendered = Mustache.render(template, links[i]);
-        // div.append(rendered);
         $(rendered).hide().appendTo('#nav').show(700);
       }
-
-
-      // div.hide().appendTo('#nav').show(750);
     });
   },
 
