@@ -121,7 +121,7 @@ $(function() {
       resetYield();
       setTimeout(function() {
         $(rendered).hide().appendTo('#yield').fadeIn('slow');
-      }, 500);
+      }, 750);
     });
   },
 
@@ -131,7 +131,7 @@ $(function() {
     $.get('templates/navLink.mst', function(template) {
       for (var i = 0; i < links.length; i++) {
         var rendered = Mustache.render(template, links[i]);
-        $(rendered).hide().appendTo('#nav').show(700);
+        $(rendered).hide().appendTo('#nav').show(1000);
       }
     });
   },
