@@ -75,16 +75,21 @@ $(function() {
     }
   ],
   thoughtsNavLinks = [
+    // {
+    //   route:  '/#/',
+    //   icon:   'fa-home',
+    //   text:   'Home'
+    // },
     {
       route:  '/#/',
-      icon:   'fa-home',
-      text:   'Home'
-    },
-    {
-      route:  '/#/thoughts/an-almanac',
       icon:   'fa-lightbulb-o',
-      text:   'An Almanac, My Almanac'
+      text:   'Still Thinking...'
     },
+    // {
+    //   route:  '/#/thoughts/an-almanac',
+    //   icon:   'fa-lightbulb-o',
+    //   text:   'An Almanac, My Almanac'
+    // },
     // {
     //   route:  '/#/thoughts/protection-by-armament-or-protection-by-peace',
     //   icon:   'fa-lightbulb-o',
@@ -95,11 +100,11 @@ $(function() {
     //   icon:   'fa-lightbulb-o',
     //   text:   'The Empiricist'
     // },
-    {
-      route:  '/#/thoughts/on-the-harambe-incident',
-      icon:   'fa-lightbulb-o',
-      text:   'On the Harambe Incident'
-    }
+    // {
+    //   route:  '/#/thoughts/on-the-harambe-incident',
+    //   icon:   'fa-lightbulb-o',
+    //   text:   'On the Harambe Incident'
+    // }
   ],
   thoughtNavLinks = [
     {
