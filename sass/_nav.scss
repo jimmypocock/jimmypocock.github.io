@@ -8,6 +8,7 @@ $hoverColor: $blue;
   text-align: left;
   border: 1px solid $black;
   border-right: 0;
+  border-bottom: 0;
   @include rem-fallback(padding, 0.75, 0);
   @include rem-fallback(padding-left, 1);
 

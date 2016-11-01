@@ -1,0 +1,19 @@
+#footer {
+  &, & .overlay { height: 250px; }
+  width: 100%;
+  @include background;
+  background-image: url('/images/tree.jpg');
+  background-position: center bottom;
+  .overlay {
+    width: 100%;
+    background: transparent;
+    background-image: linear-gradient(rgba(#fff, 1) 10%, rgba(#fff, 0.1) 60%);
+  }
+
+  @include mobile {
+    &, & .overlay { height: 150px; }
+    .overlay {
+      background-image: linear-gradient(rgba(#fff, 1) 0, rgba(#fff, 0.1) 75%);
+    }
+  }
+}

@@ -14,6 +14,24 @@
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+a {
+  transition: all 0.3s ease;
+  color: #312c32;
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
 @import "header";
+@import "summary";
 @import "yield";
 @import "nav";
+@import "footer";
