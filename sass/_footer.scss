@@ -7,7 +7,7 @@
   .overlay {
     width: 100%;
     background: transparent;
-    background-image: linear-gradient(rgba(#fff, 1) 10%, rgba(#fff, 0.1) 60%);
+    background-image: linear-gradient(rgba(#fff, 1) 10%, rgba(#fff, 0.1) 50%);
   }
 
   @include mobile {
