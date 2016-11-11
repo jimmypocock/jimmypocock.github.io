@@ -1,5 +1,7 @@
 #footer {
   &, & .overlay { height: 250px; }
+  position: absolute;
+  bottom: 0;
   width: 100%;
   @include background;
   background-image: url('/images/tree.jpg');
@@ -11,6 +13,7 @@
   }
 
   @include mobile {
+    position: relative;
     &, & .overlay { height: 150px; }
     .overlay {
       background-image: linear-gradient(rgba(#fff, 1) 0, rgba(#fff, 0.1) 75%);
