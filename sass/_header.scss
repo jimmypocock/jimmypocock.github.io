@@ -2,7 +2,7 @@
   max-width: 700px;
   text-align: center;
   margin: 0 auto;
-  @include rem-fallback(padding-top, 4);
+  @include rem-fallback(padding-top, 10);
   @include rem-fallback(margin-bottom, 1);
 
   @include mobile {
