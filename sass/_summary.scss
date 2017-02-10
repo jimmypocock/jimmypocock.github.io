@@ -1,9 +1,0 @@
-.summary {
-  margin: 0 auto;
-  max-width: 768px;
-  text-align: center;
-  @include mobile {
-    text-align: justify;
-    @include rem-fallback(padding, 0, 1);
-  }
-}

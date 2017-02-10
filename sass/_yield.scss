@@ -1,9 +1,0 @@
-#yield {
-  max-width: 700px;
-  margin: 0 auto;
-  @include rem-fallback(padding, 2, 0, 4);
-
-  @include mobile {
-    @include rem-fallback(padding, 2, 1);
-  }
-}
