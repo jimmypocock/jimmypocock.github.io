@@ -50,6 +50,7 @@ body {
   }
 
   p {
+    letter-spacing: 2.5px;
     @include rem-fallback(padding-bottom, 0.5);
   }
 
