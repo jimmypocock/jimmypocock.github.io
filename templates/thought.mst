@@ -1,4 +1,0 @@
-<div id="thought">
-  <h2>{{ title }}</h2>
-  <p>{{{ thought }}}</p>
-</div>
