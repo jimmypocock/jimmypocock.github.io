@@ -52,7 +52,10 @@ a:not(:hover) { text-decoration: none; }
 
 @media screen and (min-width: 767px) {
   .wrapper { padding-bottom: 3rem; }
-  h1 { font-size: 4em; }
+  h1 {
+    font-size: 4em;
+    letter-spacing: 0.5rem;
+  }
   p {
     font-size: 1.25em;
   }
