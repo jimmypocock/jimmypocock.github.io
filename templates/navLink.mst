@@ -1,6 +1,0 @@
-<div class="link">
-  <a href="{{ route }}">
-    <i class="fa {{ icon }}"></i>
-    <span class="text">{{ text }}</span>
-  </a>
-</div>
