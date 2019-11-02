@@ -340,14 +340,6 @@ footer:after,
   clear: both; }
 
 /*=========================================
-CUSTOM
-=========================================== */
-.shadow-jp {
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.125);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.125);
-}
-
-/*=========================================
 1. Base --> Baseline: 8px = .8rem
 =========================================== */
 /* -- Disable elastic scrolling/bounce:
@@ -1457,11 +1449,11 @@ section,
   page-break-after: always;
   position: relative;
   word-wrap: break-word; }
-  /* @media (min-width: 1024px) {
+  @media (min-width: 1024px) {
     section,
     .slide {
       padding-bottom: 12rem;
-      padding-top: 12rem; } } */
+      padding-top: 12rem; } }
 
 /*slide with no padding (full card, .embed youtube video...) */
 .fullscreen {
@@ -1613,7 +1605,7 @@ form[class*='bg-'] {
 #navigation {
   -webkit-animation: fadeIn 8s;
           animation: fadeIn 8s;
-  bottom: 2rem;
+  bottom: 0;
   left: 0;
   margin-left: auto;
   margin-right: auto;
@@ -2916,10 +2908,10 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
       #webslides-zoomed .slide {
         height: 200%;
         width: 200%; } }
-  /* @media (min-width: 1024px) {
+  @media (min-width: 1024px) {
     #webslides-zoomed > .wrap {
       padding-bottom: 12rem;
-      padding-top: 12rem; } } */
+      padding-top: 12rem; } }
   #webslides-zoomed > .wrap > .grid > .column {
     -ms-flex-item-align: auto;
         align-self: auto;
@@ -3093,7 +3085,7 @@ a,
   color: #ff5252; }
 
 a:hover {
-  color: #ff3939; }
+  color: #3af; }
 
 .flexblock li > a,
 [class*='bg-'] li > a,
@@ -3769,9 +3761,8 @@ Slides (Counter/Arrows)
   color: #abc; }
 
 #webslides:hover #navigation a:hover {
-  background-color: #17232c;
-  color: #fff;
-  text-decoration: none; }
+  background-color: rgba(0, 10, 40, 0.8);
+  color: #fff; }
 
 /*============================
 Footer
@@ -3783,7 +3774,7 @@ footer[role='contentinfo'] {
 Slides Index
 ============================== */
 #webslides-zoomed {
-  background: #17232c; }
+  background: rgba(0, 10, 40, 0.8); }
 
 #webslides-zoomed .column > .wrap-zoom {
   background-color: #f7f9fb;
