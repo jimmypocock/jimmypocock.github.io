@@ -34,7 +34,7 @@ footer[role="contentinfo"] {
 
 @media (max-width: 768px) {
   .slide .wrap {
-    padding-bottom: 2rem !important;
-    padding-bottom: 12rem !important;
+    padding-bottom: 6rem !important;
+    padding-top: 2rem !important;
   }
 }
