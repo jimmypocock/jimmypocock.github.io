@@ -5,9 +5,7 @@
   bottom: 2rem;
 }
 
-a:hover {
-  color: #ff3939;
-}
+a:hover { color: #ff3939; }
 
 #webslides:hover #navigation a:hover {
   background-color: #17232c;
@@ -26,16 +24,17 @@ footer[role="contentinfo"] {
   color: #fff;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
   section,
   .slide {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-bottom: 3rem !important;
+    padding-top: 0 !important;
   }
 }
 
 @media (max-width: 768px) {
   .slide .wrap {
-    padding-bottom: 6rem !important;
+    padding-bottom: 2rem !important;
+    padding-bottom: 12rem !important;
   }
 }
